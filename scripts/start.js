@@ -1,3 +1,4 @@
+//Start.js
 (function () {
   function clamp(n, a, b) {
     return Math.max(a, Math.min(b, n));
@@ -111,12 +112,15 @@
     let dpr = 1;
     let raf = 0;
 
- let starsFar = [];
+let starsFar = [];
 let starsMid = [];
 let starsNear = [];
 let meteors = [];
 let nebula = [];
-let clouds = [];
+let cloudsFar = [];
+let cloudsMid = [];
+let cloudsNear = [];
+let lightParticles = [];
 
     let mouse = { x: 0.5, y: 0.5, vx: 0, vy: 0 };
 
@@ -169,15 +173,16 @@ function lightMul() {
       canvas.style.width = window.innerWidth + "px";
       canvas.style.height = window.innerHeight + "px";
 
-      const area = window.innerWidth * window.innerHeight;
+     const area = window.innerWidth * window.innerHeight;
 
-      const farCount = clamp(Math.floor(area / 5000), 140, 480);
-      const midCount = clamp(Math.floor(area / 9000), 70, 220);
-      const nearCount = clamp(Math.floor(area / 15000), 40, 140);
+/* dark theme: estrelas + nebulosa */
+const starFarCount = clamp(Math.floor(area / 5000), 140, 480);
+const starMidCount = clamp(Math.floor(area / 9000), 70, 220);
+const starNearCount = clamp(Math.floor(area / 15000), 40, 140);
 
-      starsFar = makeStars(farCount, 0.45, 1.0, 0.14, 0.45, 0.0015, 0.005);
-      starsMid = makeStars(midCount, 0.85, 1.45, 0.18, 0.65, 0.002, 0.008);
-      starsNear = makeStars(nearCount, 1.2, 2.0, 0.24, 0.8, 0.003, 0.01);
+starsFar = makeStars(starFarCount, 0.45, 1.0, 0.14, 0.45, 0.0015, 0.005);
+starsMid = makeStars(starMidCount, 0.85, 1.45, 0.18, 0.65, 0.002, 0.008);
+starsNear = makeStars(starNearCount, 1.2, 2.0, 0.24, 0.8, 0.003, 0.01);
 
 const nebCount = clamp(Math.floor(area / 180000), 4, 10);
 nebula = Array.from({ length: nebCount }, () => ({
@@ -189,36 +194,105 @@ nebula = Array.from({ length: nebCount }, () => ({
   driftY: rand(-0.03, 0.03) * dpr,
 }));
 
-const cloudCount = clamp(Math.floor(area / 220000), 4, 9);
-clouds = Array.from({ length: cloudCount }, () => {
-  const scale = rand(0.8, 1.45);
-  return {
-    x: rand(-220, w * 0.8),
-    y: rand(h * 0.06, h * 0.42),
-    width: rand(140, 260) * scale * dpr,
-    height: rand(46, 92) * scale * dpr,
-    speed: rand(0.08, 0.24) * dpr,
-    alpha: rand(0.16, 0.3),
-    blur: rand(18, 34) * dpr,
-  };
+/* light theme: nuvens + partículas */
+function makeCloudLayer(count, config) {
+  return Array.from({ length: count }, () => {
+    const scale = rand(config.scaleMin, config.scaleMax);
+    return {
+      x: rand(-260, w * 0.82),
+      y: rand(config.yMin * h, config.yMax * h),
+      width: rand(config.widthMin, config.widthMax) * scale * dpr,
+      height: rand(config.heightMin, config.heightMax) * scale * dpr,
+      speed: rand(config.speedMin, config.speedMax) * dpr,
+      alpha: rand(config.alphaMin, config.alphaMax),
+      blur: rand(config.blurMin, config.blurMax) * dpr,
+    };
+  });
+}
+
+const farCount = clamp(Math.floor(area / 240000), 3, 5);
+const midCount = clamp(Math.floor(area / 180000), 4, 7);
+const nearCount = clamp(Math.floor(area / 135000), 5, 9);
+
+cloudsFar = makeCloudLayer(farCount, {
+  scaleMin: 1.25,
+  scaleMax: 1.9,
+  yMin: 0.06,
+  yMax: 0.22,
+  widthMin: 220,
+  widthMax: 360,
+  heightMin: 48,
+  heightMax: 88,
+  speedMin: 0.015,
+  speedMax: 0.04,
+  alphaMin: 0.12,
+  alphaMax: 0.18,
+  blurMin: 22,
+  blurMax: 34,
 });
+
+cloudsMid = makeCloudLayer(midCount, {
+  scaleMin: 1.0,
+  scaleMax: 1.55,
+  yMin: 0.12,
+  yMax: 0.30,
+  widthMin: 180,
+  widthMax: 300,
+  heightMin: 48,
+  heightMax: 86,
+  speedMin: 0.03,
+  speedMax: 0.08,
+  alphaMin: 0.16,
+  alphaMax: 0.24,
+  blurMin: 16,
+  blurMax: 28,
+});
+
+cloudsNear = makeCloudLayer(nearCount, {
+  scaleMin: 0.95,
+  scaleMax: 1.4,
+  yMin: 0.18,
+  yMax: 0.40,
+  widthMin: 160,
+  widthMax: 270,
+  heightMin: 52,
+  heightMax: 92,
+  speedMin: 0.05,
+  speedMax: 0.11,
+  alphaMin: 0.22,
+  alphaMax: 0.34,
+  blurMin: 10,
+  blurMax: 20,
+});
+
+const particleCount = clamp(Math.floor(area / 22000), 28, 72);
+lightParticles = Array.from({ length: particleCount }, () => ({
+  x: Math.random() * w,
+  y: rand(h * 0.02, h * 0.62),
+  r: rand(1.2, 3.2) * dpr,
+  a: rand(0.1, 0.26),
+  driftX: rand(0.02, 0.08) * dpr,
+  driftY: rand(-0.01, 0.015) * dpr,
+  phase: Math.random() * Math.PI * 2,
+  tw: rand(0.002, 0.008),
+}));
 
 meteors = [];
     }
-function drawClouds(alphaMul) {
-  if (!clouds.length || alphaMul <= 0) return;
+function drawCloudLayer(layer, alphaMul, parallaxX, parallaxY) {
+  if (!layer.length || alphaMul <= 0) return;
 
-  const px = (mouse.x - 0.5) * 10 * dpr;
-  const py = (mouse.y - 0.5) * 6 * dpr;
+  const px = (mouse.x - 0.5) * parallaxX * dpr;
+  const py = (mouse.y - 0.5) * parallaxY * dpr;
 
   ctx.save();
 
-  for (const c of clouds) {
+  for (const c of layer) {
     c.x += c.speed;
 
-    if (c.x - c.width > w + 120 * dpr) {
-      c.x = -c.width - rand(40, 180) * dpr;
-      c.y = rand(h * 0.06, h * 0.42);
+    if (c.x - c.width > w + 140 * dpr) {
+      c.x = -c.width - rand(40, 220) * dpr;
+      c.y = rand(h * 0.06, h * 0.44);
     }
 
     const x = c.x + px;
@@ -228,18 +302,19 @@ function drawClouds(alphaMul) {
     ctx.globalAlpha = c.alpha * alphaMul;
     ctx.filter = `blur(${c.blur}px)`;
 
-    const g = ctx.createRadialGradient(
-      x,
-      y,
-      c.width * 0.08,
-      x,
-      y,
-      c.width * 0.6
-    );
+ const g = ctx.createRadialGradient(
+  x,
+  y,
+  c.width * 0.06,
+  x,
+  y,
+  c.width * 0.62
+);
 
-    g.addColorStop(0, "rgba(255,255,255,0.95)");
-    g.addColorStop(0.5, "rgba(255,255,255,0.65)");
-    g.addColorStop(1, "rgba(255,255,255,0)");
+g.addColorStop(0, "rgba(255,255,255,1)");
+g.addColorStop(0.35, "rgba(255,255,255,0.88)");
+g.addColorStop(0.72, "rgba(255,255,255,0.42)");
+g.addColorStop(1, "rgba(255,255,255,0)");
 
     ctx.fillStyle = g;
 
@@ -273,6 +348,63 @@ function drawClouds(alphaMul) {
 
     ctx.restore();
   }
+
+  ctx.restore();
+}
+
+function drawLightParticles(alphaMul) {
+  if (!lightParticles.length || alphaMul <= 0) return;
+
+  ctx.save();
+  ctx.globalCompositeOperation = "screen";
+
+  for (const p of lightParticles) {
+    p.phase += p.tw;
+    p.x += p.driftX;
+    p.y += p.driftY;
+
+    if (p.x > w + 24 * dpr) p.x = -16 * dpr;
+    if (p.y < -20 * dpr) p.y = h * 0.45;
+    if (p.y > h * 0.68) p.y = h * 0.12;
+
+   const a = clamp(p.a + Math.sin(p.phase) * 0.06, 0.06, 0.34) * alphaMul;
+
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255, 249, 220, ${a})`;
+    ctx.fill();
+
+    if (p.r > 1.8 * dpr) {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r * 2.8, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255, 244, 196, ${a * 0.18})`;
+      ctx.fill();
+    }
+  }
+
+  ctx.restore();
+}
+
+function drawSunGlow(alphaMul) {
+  if (alphaMul <= 0) return;
+
+  ctx.save();
+  ctx.globalCompositeOperation = "screen";
+
+  const x = w * 0.52;
+  const y = -30 * dpr;
+  const r = Math.max(w * 0.24, h * 0.2);
+
+  const g = ctx.createRadialGradient(x, y, 0, x, y, r);
+  g.addColorStop(0, `rgba(255, 245, 196, ${0.36 * alphaMul})`);
+  g.addColorStop(0.24, `rgba(255, 232, 170, ${0.2 * alphaMul})`);
+  g.addColorStop(0.58, `rgba(255, 255, 255, ${0.08 * alphaMul})`);
+  g.addColorStop(1, "rgba(255,255,255,0)");
+
+  ctx.fillStyle = g;
+  ctx.beginPath();
+  ctx.arc(x, y, r, 0, Math.PI * 2);
+  ctx.fill();
 
   ctx.restore();
 }
@@ -427,9 +559,13 @@ function tick() {
     drawMeteors(darkAlpha);
   }
 
-  if (lightAlpha > 0) {
-    drawClouds(lightAlpha);
-  }
+if (lightAlpha > 0) {
+  drawSunGlow(lightAlpha);
+  drawCloudLayer(cloudsFar, lightAlpha * 0.85, 4, 2);
+  drawCloudLayer(cloudsMid, lightAlpha * 0.95, 8, 4);
+  drawCloudLayer(cloudsNear, lightAlpha, 14, 7);
+  drawLightParticles(lightAlpha);
+}
 
   raf = requestAnimationFrame(tick);
 }

@@ -1,0 +1,34 @@
+{
+  "eyebrow": "Contato",
+  "title": "Vamos conversar?",
+  "description": "Estou sempre aberto a novas oportunidades, projetos interessantes e conexões que gerem valor real.",
+  "items": [
+    {
+      "type": "email",
+      "label": "Email",
+      "value": "david.stewartsb@gmail.com",
+      "href": "mailto:david.stewartsb@gmail.com"
+    },
+    {
+      "type": "phone",
+      "label": "Telefone",
+      "value": "+55 13 99733-8708",
+      "href": "https://wa.me/5513997338708",
+      "external": true
+    },
+    {
+      "type": "github",
+      "label": "GitHub",
+      "value": "@davidstewart",
+      "href": "https://github.com/davidstewart",
+      "external": true
+    },
+    {
+      "type": "linkedin",
+      "label": "LinkedIn",
+      "value": "/in/david-stewart",
+      "href": "https://www.linkedin.com/in/david-stewart",
+      "external": true
+    }
+  ]
+}

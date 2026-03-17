@@ -1,0 +1,54 @@
+{
+  "section": {
+    "eyebrow": "Habilidades",
+    "title": "Tecnologias & Ferramentas",
+    "description": "Tecnologias, bibliotecas e ferramentas que utilizo para construir interfaces modernas, sistemas robustos e produtos digitais com foco em performance, qualidade e evolução contínua."
+  },
+  "categories": [
+    {
+      "id": "front",
+      "label": "Front-end",
+      "icon": "code",
+      "items": [
+        { "name": "JavaScript", "icon": "JS" },
+        { "name": "TypeScript", "icon": "TS" },
+        { "name": "React", "icon": "⚛" },
+        { "name": "Next.js", "icon": "N" },
+        { "name": "Tailwind CSS", "icon": "≈" },
+        { "name": "Chakra UI", "icon": "✦" },
+        { "name": "Shadcn UI", "icon": "／" },
+        { "name": "Styled Components", "icon": "</>" }
+      ]
+    },
+    {
+      "id": "back",
+      "label": "Back-end",
+      "icon": "server",
+      "items": [
+        { "name": "Python", "icon": "Py" },
+        { "name": "Node.js", "icon": "JS" },
+        { "name": "Express", "icon": "Ex" },
+        { "name": "FastAPI", "icon": "FA" },
+        { "name": "PostgreSQL", "icon": "PG" },
+        { "name": "Redis", "icon": "RD" },
+        { "name": "MongoDB", "icon": "MG" },
+        { "name": "REST API", "icon": "API" }
+      ]
+    },
+    {
+      "id": "others",
+      "label": "Outros",
+      "icon": "sparkles",
+      "items": [
+        { "name": "Git", "icon": "Git" },
+        { "name": "GitHub", "icon": "GH" },
+        { "name": "Figma", "icon": "Fg" },
+        { "name": "Docker", "icon": "DK" },
+        { "name": "Linux", "icon": "LX" },
+        { "name": "Vercel", "icon": "VC" },
+        { "name": "Mercado Pago API", "icon": "MP" },
+        { "name": "Socket.io", "icon": "SK" }
+      ]
+    }
+  ]
+}

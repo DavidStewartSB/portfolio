@@ -1,0 +1,18 @@
+[
+  {
+    "label": "Frontend",
+    "icon": "frontend"
+  },
+  {
+    "label": "Backend",
+    "icon": "backend"
+  },
+  {
+    "label": "Design",
+    "icon": "design"
+  },
+  {
+    "label": "DevOps",
+    "icon": "devops"
+  }
+]

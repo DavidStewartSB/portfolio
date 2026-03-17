@@ -1,0 +1,54 @@
+{
+  "section": {
+    "eyebrow": "Experiência",
+    "title": "Experiência Profissional",
+    "description": "Minha trajetória profissional envolve desenvolvimento de aplicações, arquitetura de soluções e evolução contínua de produtos digitais com foco em performance, qualidade e valor real."
+  },
+  "items": [
+    {
+      "id": "cetep-dev-intern",
+      "role": "Estagiário em Desenvolvimento de Sistemas",
+      "company": "CETEP – Centro Territorial de Educação Profissional da Bacia do Jacuípe",
+      "employmentType": "Estágio",
+      "location": "Bahia, BA",
+      "period": "2021 - 2022",
+      "summary": [
+        "Atuação como estagiário no setor de Tecnologia da Informação durante o curso técnico em Informática.",
+        "Desenvolvimento de aplicações utilizando Python, Kivy/KivyMD e OpenCV.",
+        "Implementação de funcionalidades de reconhecimento facial aplicadas à segurança escolar.",
+        "Trabalho em equipe na análise, planejamento e desenvolvimento de soluções tecnológicas.",
+        "Integração entre software e hardware utilizando Arduino Nano e comunicação via pyFirmata.",
+        "Auxílio na modelagem e manipulação de dados utilizando MongoDB."
+      ],
+      "technologies": ["Python", "OpenCV", "Kivy", "KivyMD", "Arduino", "MongoDB"]
+    },
+    {
+      "id": "codelabs-fullstack",
+      "role": "Desenvolvedor Full-Stack",
+      "company": "Codelabs USA",
+      "employmentType": "Remoto",
+      "location": "Remoto",
+      "period": "Maio 2024 - Atual",
+      "summary": [
+        "Desenvolvimento de aplicações web completas utilizando React, Next.js, Express e Elysia.",
+        "Atuação com metodologias ágeis (Scrum), participando de ciclos semanais de entrega e planejamento.",
+        "Participação na construção e evolução de produtos end-to-end, incluindo landing pages, dashboards e sistemas internos.",
+        "Colaboração desde o início no projeto JustApp (restaurantes e cafeterias), contribuindo para funcionalidades críticas e otimização de performance.",
+        "Redução de mais de 40% no tempo de resposta de páginas através de paginação inteligente e estratégias de carregamento otimizado.",
+        "Desenvolvimento de um servidor dedicado em Python para renderização otimizada, melhorando fluxo de dados e performance geral."
+      ],
+      "technologies": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Node.js",
+        "Express",
+        "Elysia",
+        "Python",
+        "PostgreSQL",
+        "Redis",
+        "Tailwind CSS"
+      ]
+    }
+  ]
+}

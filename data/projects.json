@@ -1,0 +1,90 @@
+{
+  "section": {
+    "eyebrow": "Projetos",
+    "title": "Meus Projetos",
+    "description": "Alguns produtos, plataformas e experiências digitais que desenvolvi com foco em arquitetura, performance, identidade visual e valor real de negócio."
+  },
+  "items": [
+    {
+      "id": "kortx-triagem-ia",
+      "title": "Kortx — Triagem com IA",
+      "subtitle": "HealthTech com triagem adaptativa e análise contextual assistida por IA.",
+      "description": "Plataforma que utiliza IA para triagem adaptativa de TDAH, TEA leve e ansiedade social. O fluxo ajusta dinamicamente as perguntas com base nas respostas para produzir uma avaliação inicial mais contextualizada, progressiva e inteligente.",
+      "image": "./assets/images/projects/kortx-dashboard.png",
+      "imageAlt": "Interface da plataforma Kortx com dashboard de avaliações e triagem inteligente",
+      "bullets": [
+        "Triagem adaptativa baseada em Inteligência Artificial",
+        "Autoavaliação para TDAH, TEA e ansiedade social",
+        "Análise dinâmica de funções executivas e padrões cognitivos",
+        "Interface guiada para avaliação progressiva",
+        "Integração de pagamentos para relatórios avançados",
+        "Arquitetura Full-Stack com backend em Python/FastAPI"
+      ],
+      "technologies": [
+        "React",
+        "Tailwind CSS",
+        "HeroUI",
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "Mercado Pago API"
+      ],
+      "projectUrl": "#",
+      "projectLabel": "Ver projeto"
+    },
+    {
+      "id": "justapp",
+      "title": "JustApp",
+      "subtitle": "Plataforma end-to-end para restaurantes e cafeterias.",
+      "description": "Sistema completo voltado ao segmento de alimentação, com dashboards administrativos, fluxos otimizados, interfaces modernas e atenção forte à performance. O projeto envolveu evolução contínua de produto, engenharia de front-end e decisões arquiteturais orientadas a escala.",
+      "image": "./assets/images/projects/justapp-dashboard.png",
+      "imageAlt": "Painel administrativo do JustApp com dashboard moderno e interface para gestão",
+      "bullets": [
+        "Redução de mais de 40% no tempo de resposta com paginação inteligente",
+        "Servidor dedicado em Python para renderização otimizada",
+        "Sistema de autenticação e autorização robusto",
+        "Dashboards administrativos e interfaces de gestão",
+        "Fluxos end-to-end para operação e produto",
+        "Otimizações de carregamento e experiência do usuário"
+      ],
+      "technologies": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Node.js",
+        "Python",
+        "PostgreSQL",
+        "Redis",
+        "Tailwind CSS"
+      ],
+      "projectUrl": "#",
+      "projectLabel": "Ver projeto"
+    },
+    {
+      "id": "bid-plataforma-servicos",
+      "title": "BID — Plataforma de Serviços",
+      "subtitle": "Marketplace de conexão entre profissionais e clientes.",
+      "description": "Plataforma de conexão entre profissionais e clientes com sistema de avaliações, escrow para pagamentos seguros, vitrine de portfólio e recomendação orientada por geolocalização. O foco foi entregar confiança, clareza de fluxo e uma base técnica preparada para crescimento.",
+      "image": "./assets/images/projects/bid-home.png",
+      "imageAlt": "Landing page da plataforma BID com destaque para serviços de reformas e manutenção",
+      "bullets": [
+        "Sistema de avaliações mútuas entre cliente e profissional",
+        "Cadastro de projetos com galeria e portfólio",
+        "Escrow para retenção e liberação segura de pagamentos",
+        "Chat em tempo real com atualização instantânea",
+        "Sistema de recomendação baseado em geolocalização",
+        "Estrutura preparada para evolução de marketplace"
+      ],
+      "technologies": [
+        "React",
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "Socket.io",
+        "Google Geolocation API"
+      ],
+      "projectUrl": "#",
+      "projectLabel": "Ver projeto"
+    }
+  ]
+}
