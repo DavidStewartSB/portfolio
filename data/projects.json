@@ -21,7 +21,7 @@
         "Arquitetura Full-Stack com backend em Python/FastAPI"
       ],
       "technologies": [
-        "React",
+        "Angular",
         "Tailwind CSS",
         "HeroUI",
         "Python",
@@ -48,7 +48,7 @@
         "Otimizações de carregamento e experiência do usuário"
       ],
       "technologies": [
-        "React",
+        "Angular",
         "Next.js",
         "TypeScript",
         "Node.js",
@@ -76,7 +76,7 @@
         "Estrutura preparada para evolução de marketplace"
       ],
       "technologies": [
-        "React",
+        "Angular",
         "Node.js",
         "Express",
         "PostgreSQL",

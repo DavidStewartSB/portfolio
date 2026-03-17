@@ -12,12 +12,8 @@
       "items": [
         { "name": "JavaScript", "icon": "JS" },
         { "name": "TypeScript", "icon": "TS" },
-        { "name": "React", "icon": "⚛" },
-        { "name": "Next.js", "icon": "N" },
-        { "name": "Tailwind CSS", "icon": "≈" },
-        { "name": "Chakra UI", "icon": "✦" },
-        { "name": "Shadcn UI", "icon": "／" },
-        { "name": "Styled Components", "icon": "</>" }
+        { "name": "Angular", "icon": "⚛" },
+        { "name": "Tailwind CSS", "icon": "≈" }
       ]
     },
     {
@@ -25,10 +21,8 @@
       "label": "Back-end",
       "icon": "server",
       "items": [
-        { "name": "Python", "icon": "Py" },
         { "name": "Node.js", "icon": "JS" },
         { "name": "Express", "icon": "Ex" },
-        { "name": "FastAPI", "icon": "FA" },
         { "name": "PostgreSQL", "icon": "PG" },
         { "name": "Redis", "icon": "RD" },
         { "name": "MongoDB", "icon": "MG" },
