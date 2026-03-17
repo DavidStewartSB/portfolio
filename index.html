@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>David Stewart | Portfólio</title>
+    <meta
+      name="description"
+      content="Portfólio de David Stewart, desenvolvedor web full-stack com foco em interfaces modernas, arquitetura escalável e identidade visual forte."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./styles/index.css" />
+  </head>
+
+  <body>
+    <canvas id="stars" class="stars-canvas" aria-hidden="true"></canvas>
+
+    <div class="page-shell">
+      <header class="site-header" id="top">
+        <div class="container site-header__inner">
+          <a href="#home" class="brand" aria-label="Ir para o início">
+            <span class="brand__top">David Stewart</span>
+            <span class="brand__bottom">&lt; full-stack /&gt;</span>
+          </a>
+
+          <button
+            class="site-header__menu-button"
+            type="button"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="primary-navigation"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <nav
+            id="primary-navigation"
+            class="site-header__nav"
+            aria-label="Navegação principal"
+          >
+            <a href="#home">Início</a>
+            <a href="#about">Sobre</a>
+            <a href="#experience">Experiência</a>
+            <a href="#projects">Projetos</a>
+            <a href="#skills">Habilidades</a>
+            <a href="#contact">Contato</a>
+          </nav>
+
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="Alternar tema"
+            aria-pressed="true"
+            title="Alternar tema"
+          >
+            <span class="theme-toggle__track" aria-hidden="true">
+              <svg
+                class="theme-toggle__icon theme-toggle__icon--moon"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M20 15.5A8.5 8.5 0 0 1 8.5 4a7 7 0 1 0 11.5 11.5Z"
+                  fill="currentColor"
+                />
+              </svg>
+
+              <svg
+                class="theme-toggle__icon theme-toggle__icon--sun"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <circle cx="12" cy="12" r="4.25" fill="currentColor" />
+              </svg>
+
+              <span class="theme-toggle__thumb"></span>
+            </span>
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <section id="home" class="hero" aria-labelledby="hero-title">
+          <div class="container hero__inner">
+            <div class="hero__content">
+              <p class="hero__eyebrow">Hello, I'm</p>
+
+              <h1 id="hero-title" class="hero__title">David Stewart</h1>
+
+              <p class="hero__subtitle">
+                <span class="hero__subtitle-prefix">Web Developer</span>
+                <span
+                  class="hero__subtitle-highlight"
+                  data-typing
+                  data-words='["Full-Stack","Frontend","UI Engineer","Problem Solver"]'
+                >
+                  Full-Stack
+                </span>
+              </p>
+
+              <p class="hero__description">
+                Desenvolvedor focado em interfaces modernas, arquitetura
+                escalável e experiências digitais com identidade forte, limpa e
+                funcional.
+              </p>
+
+              <nav class="hero__socials" aria-label="Redes sociais">
+                <a href="#" aria-label="GitHub" class="social-link social-link--icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path
+                      d="M12 2C6.48 2 2 6.58 2 12.23c0 4.52 2.87 8.36 6.84 9.71.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.88-2.78.62-3.37-1.2-3.37-1.2-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.56 2.35 1.11 2.92.85.09-.67.35-1.11.64-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.74 0 0 .84-.27 2.75 1.05A9.3 9.3 0 0 1 12 6.84c.85 0 1.7.12 2.5.35 1.9-1.32 2.74-1.05 2.74-1.05.56 1.43.21 2.48.11 2.74.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.24 10.24 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"
+                    />
+                  </svg>
+                  <span>GitHub</span>
+                </a>
+
+                <a href="#" aria-label="LinkedIn" class="social-link social-link--icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path
+                      d="M6.94 8.5a1.72 1.72 0 1 1 0-3.44 1.72 1.72 0 0 1 0 3.44ZM5.45 9.84h2.98V19H5.45V9.84ZM10.3 9.84h2.86v1.25h.04c.4-.76 1.37-1.56 2.82-1.56 3.01 0 3.57 2.02 3.57 4.65V19h-2.99v-4.28c0-1.02-.02-2.34-1.4-2.34-1.4 0-1.62 1.12-1.62 2.27V19H10.3V9.84Z"
+                    />
+                  </svg>
+                  <span>LinkedIn</span>
+                </a>
+              </nav>
+
+              <div class="hero__actions">
+                <a href="#" class="button button--primary">Download CV</a>
+                <a href="#projects" class="button button--ghost">Ver projetos</a>
+              </div>
+            </div>
+
+            <div class="hero__media" aria-hidden="true">
+              <div class="hero__image-glow"></div>
+
+              <figure class="hero__image-wrapper">
+                <img
+                  src="./assets/images/avatar-david-coffee.png"
+                  alt=""
+                  class="hero__image"
+                />
+              </figure>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container site-footer__inner">
+          <div class="site-footer__brand">
+            <span class="site-footer__name">David Stewart</span>
+            <span class="site-footer__tag">Designing code, systems and identity.</span>
+          </div>
+
+          <a href="#top" class="site-footer__back">Voltar ao topo ↑</a>
+        </div>
+      </footer>
+    </div>
+
+    <script src="./scripts/start.js" defer></script>
+  </body>
+</html>
